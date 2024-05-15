@@ -32,7 +32,7 @@ spec:
         emptyDir: {}
       initContainers:
       - name: download-argocd-vault-plugin
-        image: argoprojlabs/argocd-vault-plugin:v1.7.1
+        image: argoprojlabs/argocd-vault-plugin:latest
         command: ["/bin/sh", "-c"]
         args:
           - cp /usr/local/bin/argocd-vault-plugin /home/argocd/cmp-server/plugins/argocd-vault-plugin;
