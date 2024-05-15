@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: glowing-spoon
-        image: amossg/glowing-spoon:latest
+        image: dev1s/glowing-spoon:latest
         env:
         - name: USERNAME
           valueFrom:
