@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: glowing-spoon
-        image: your-dockerhub-username/glowing-spoon:latest
+        image: amossg/glowing-spoon:latest
         env:
         - name: USERNAME
           valueFrom:
