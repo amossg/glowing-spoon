@@ -46,7 +46,7 @@ metadata:
   name: glowing-spoon-secret
   namespace: test-argocd 
   annotations:
-    avp.kubernetes.io/path: "secret/glowing-spoon/config"
+    avp.kubernetes.io/path: "glowing-spoon/config"
 type: Opaque
 data:
   username: ""

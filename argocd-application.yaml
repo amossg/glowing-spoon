@@ -9,6 +9,7 @@ spec:
     repoURL: 'https://github.com/amossg/glowing-spoon.git'
     targetRevision: HEAD
     path: .
+    plugin: {}
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: test-argocd
@@ -18,15 +19,4 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
-  # Добавляем плагины для использования Vault
-  source:
-    repoURL: 'https://github.com/amossg/glowing-spoon.git'
-    targetRevision: HEAD
-    path: .
-    helm:
-      valueFiles: []
-  destination:
-    server: 'https://kubernetes.default.svc'
-    namespace: test-argocd
-  project: default
 
