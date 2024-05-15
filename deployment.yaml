@@ -30,15 +30,15 @@ spec:
       volumes:
       - name: avp
         emptyDir: {}
-      initContainers:
-      - name: download-argocd-vault-plugin
-        image: argoprojlabs/argocd-vault-plugin:latest
-        command: ["/bin/sh", "-c"]
-        args:
-          - cp /usr/local/bin/argocd-vault-plugin /home/argocd/cmp-server/plugins/argocd-vault-plugin;
-        volumeMounts:
-        - name: avp
-          mountPath: /home/argocd/cmp-server/plugins
+#      initContainers:
+#      - name: download-argocd-vault-plugin
+#        image: argoprojlabs/argocd-vault-plugin:latest
+#        command: ["/bin/sh", "-c"]
+#        args:
+#          - cp /usr/local/bin/argocd-vault-plugin /home/argocd/cmp-server/plugins/argocd-vault-plugin;
+#        volumeMounts:
+#        - name: avp
+#          mountPath: /home/argocd/cmp-server/plugins
 ---
 apiVersion: v1
 kind: Secret
