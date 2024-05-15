@@ -49,5 +49,5 @@ metadata:
     avp.kubernetes.io/path: "glowing-spoon/config"
 type: Opaque
 data:
-  username: ""
+  username: "<username>"
 
