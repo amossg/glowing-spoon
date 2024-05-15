@@ -17,13 +17,28 @@ spec:
     spec:
       containers:
       - name: glowing-spoon
-        image: dev1s/glowing-spoon:latest
+        image: your-dockerhub-username/glowing-spoon:latest
         env:
         - name: USERNAME
           valueFrom:
             secretKeyRef:
               name: glowing-spoon-secret
               key: username
+        volumeMounts:
+        - name: avp
+          mountPath: /home/argocd/cmp-server/plugins
+      volumes:
+      - name: avp
+        emptyDir: {}
+      initContainers:
+      - name: download-argocd-vault-plugin
+        image: argoprojlabs/argocd-vault-plugin:v1.7.1
+        command: ["/bin/sh", "-c"]
+        args:
+          - cp /usr/local/bin/argocd-vault-plugin /home/argocd/cmp-server/plugins/argocd-vault-plugin;
+        volumeMounts:
+        - name: avp
+          mountPath: /home/argocd/cmp-server/plugins
 ---
 apiVersion: v1
 kind: Secret
