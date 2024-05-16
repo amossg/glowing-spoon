@@ -39,6 +39,6 @@ metadata:
   annotations:
     avp.kubernetes.io/path: "glowing-spoon/data/config"
 type: Opaque
-data:
+stringData:
   username: "<username>"
 
